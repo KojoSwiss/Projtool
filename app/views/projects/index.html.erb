@@ -1,0 +1,9 @@
+<h1>Index Page</h1>
+
+<% @projects.each do |project| %>
+  <h4> <%= link_to project.title, project_path(project) %> | <%= project.description %> </h4>
+  <p><%= time_ago_in_words(project.created_at) %></p>
+
+<% end %>
+
+
