@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :find_project, only: [:edit, :update, :destroy, :show]
+  before_action :find_project, only: [:edit, :update, :show]
 
 
   def index
@@ -34,6 +34,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    @project = Project.find(params[:id])
     @project.destroy
     redirect_to projects_path
   end
