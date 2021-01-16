@@ -1,0 +1,4 @@
+<%= simple_form_for ([@project, @project.tasks.build]) do |f| %>
+  <%= f.input :content, placeholder: "New Task" %>
+  <%= f.button :submit %>
+<% end %>

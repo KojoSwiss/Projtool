@@ -1,9 +1,11 @@
-<h1>Index Page</h1>
-
 <% @projects.each do |project| %>
-  <h4> <%= link_to project.title, project_path(project) %> | <%= project.description %> </h4>
-  <p><%= time_ago_in_words(project.created_at) %></p>
-
+  <div class="index_row clearfix">
+    <h2 class="todo_list_title"><%= link_to project.title, project %></h2>
+    <p class="todo_list_sub_title"><%= project.description %></p>
+  </div>
 <% end %>
 
+<div class="links">
+  <%= link_to "New Projects", new_project_path %>
+</div>
 
